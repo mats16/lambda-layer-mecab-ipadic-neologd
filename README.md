@@ -1,4 +1,4 @@
-# lambda-layer-mecab-python3-neologd
+# lambda-layer-mecab-neologd-python3
 
 ### How to use
 
@@ -23,8 +23,8 @@ while node:
 ### How to build MeCab & NEologd
 
 ```bash
-docker build -t lambda-layer-mecab-python3-neologd:latest .
-docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-python3-neologd:latest
+docker build -t lambda-layer-mecab-neologd-python3:latest .
+docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-neologd-python3:latest
 ```
 
 ### How to deploy via AWS SAM
