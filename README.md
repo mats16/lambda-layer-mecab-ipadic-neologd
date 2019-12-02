@@ -20,17 +20,14 @@ while node:
     node = node.next
 ```
 
-### How to build MeCab & NEologd
+### How to build & deploy
 
 ```bash
+# Build MeCab & NEologd
 docker build -t lambda-layer-mecab-neologd-python3:latest .
 docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-neologd-python3:latest
-```
 
-### How to deploy via AWS SAM
-
-```bash
+# Deploy via AWS SAM
 sam package --output-template-file package.yaml --s3-bucket <YOUR S3 BUCKET>
-
 sam deploy --template-file package.yaml --stack-name <YOUR STACK NAME>
 ```
