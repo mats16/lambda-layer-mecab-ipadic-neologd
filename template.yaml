@@ -4,6 +4,9 @@ Parameters:
   LayerName:
     Type: String
     Default: mecab-neologd
+  Description:
+     Type: String
+     Default: init
 
 Metadata:
   AWS::ServerlessRepo::Application:
@@ -26,6 +29,7 @@ Resources:
     Type: AWS::Serverless::LayerVersion
     Properties:
       LayerName: !Ref LayerName
+      Description: !Ref Description
       ContentUri: opt/
       CompatibleRuntimes:
         - python3.6

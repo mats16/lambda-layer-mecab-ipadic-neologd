@@ -35,6 +35,8 @@ docker build -t lambda-layer-mecab-neologd:latest .
 docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-neologd:latest cp -fr /opt/. /mnt/
 
 # Deploy via AWS SAM
-sam build --use-container
+sam build
 sam deploy --guided
+
+sam deploy --parameter-overrides Description=$(date +%Y-%m-%d)
 ```
