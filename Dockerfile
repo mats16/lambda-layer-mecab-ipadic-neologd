@@ -27,7 +27,5 @@ RUN git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git ./me
     ./mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -y -p $LAMBDA_TASK_ROOT/neologd -n --eliminate-redundant-entry && \
     zip -r /opt/neologd.zip ./neologd
 
-RUN pip install -t /opt/python -r ./requirements.txt
-
 CMD ["/opt/mecab/bin/mecab", "-d", "./neologd"]
 #CMD cp -fr /opt/. /mnt/

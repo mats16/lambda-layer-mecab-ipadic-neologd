@@ -3,20 +3,20 @@ AWSTemplateFormatVersion: '2010-09-09'
 Parameters:
   LayerName:
     Type: String
-    Default: mecab-neologd-python3
+    Default: mecab-neologd
 
 Metadata:
   AWS::ServerlessRepo::Application:
-    Name: lambda-layer-mecab-neologd-python3
+    Name: lambda-layer-mecab-neologd
     Description: "AWS Lambda Layer for MeCab with NEologd"
     Author: Kazuki Matsuda
     SpdxLicenseId: Apache-2.0
     LicenseUrl: LICENSE
     ReadmeUrl: README.md
     Labels: ['layer','lambda','mecab','neologd']
-    HomePageUrl: https://github.com/mats16/lambda-layer-mecab-neologd-python3
-    SemanticVersion: 0.996.2
-    SourceCodeUrl: https://github.com/mats16/lambda-layer-mecab-neologd-python3
+    HomePageUrl: https://github.com/mats16/lambda-layer-mecab-neologd
+    SemanticVersion: 0.1.0
+    SourceCodeUrl: https://github.com/mats16/lambda-layer-mecab-neologd
 
 Transform: AWS::Serverless-2016-10-31
 Description: Create a Layer
@@ -31,6 +31,8 @@ Resources:
         - python3.6
         - python3.7
         - python3.8
+        - nodejs10.x
+        - nodejs12.x
       LicenseInfo: 'Available under the MIT-0 license.'
       RetentionPolicy: Retain
 

@@ -1,4 +1,4 @@
-# lambda-layer-mecab-neologd-python3
+# lambda-layer-mecab-neologd
 
 ### How to use in Lambda
 
@@ -31,10 +31,10 @@ First, you need to build a neologd zip file.
 
 ```bash
 # Build MeCab & NEologd
-docker build -t lambda-layer-mecab-neologd-python3:latest .
-docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-neologd-python3:latest
+docker build -t lambda-layer-mecab-neologd:latest .
+docker run -v $(pwd)/opt:/mnt -it lambda-layer-mecab-neologd:latest cp -fr /opt/. /mnt/
 
 # Deploy via AWS SAM
-sam build
+sam build --use-container
 sam deploy --guided
 ```
